@@ -1,0 +1,13 @@
+# Runtime dependencies for the Kraken market-maker and the on-chain research probes.
+# Install into a venv:  python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+#
+# The Kraken market-maker (scripts/kraken_mm_live.py + mm_bot.py + kraken_status.py) needs only:
+#   httpx, ccxt, python-dotenv
+# The on-chain research probes (flashblocks_probe, mempool_latency_harness, arb_scan, etc.) also
+# need websockets + brotli. All pinned to the versions this was built and tested against.
+
+httpx==0.28.1
+ccxt==4.5.88
+python-dotenv==1.2.4
+websockets==17.2
+brotli==1.2.0

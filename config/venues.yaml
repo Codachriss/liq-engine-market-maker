@@ -1,0 +1,48 @@
+# Venue lifecycle. A venue never skips a stage:
+#
+#   dormant -> phase0 -> shadow -> canary -> live
+#
+# `phase0` is read-only history. `shadow` runs the full live pipeline and logs decisions but
+# holds no keys and signs nothing. `canary` is the first stage that signs, and it may not be
+# entered without hard per-position and per-day loss caps.
+#
+# Which venue goes live first is a Phase 0 output, not an assumption. All three start at
+# phase0 so the study measures them on equal terms — including Ethereum, which is expected to
+# be uncompetitive for a solo operator and is here as the benchmark that proves it.
+
+venues:
+  - key: aave_v3_arbitrum
+    chain: arbitrum
+    protocol: aave_v3_arbitrum
+    status: phase0
+    notes: >
+      Primary candidate. FCFS latency race; measure how much of the liquidation flow was won
+      by slow actors before assuming we need co-located infrastructure.
+
+  - key: aave_v3_base
+    chain: base
+    protocol: aave_v3_base
+    status: phase0
+    notes: >
+      Secondary candidate. Priority-fee auction, younger market. Compare realised competition
+      against Arbitrum rather than assuming the younger market is less contested.
+
+  - key: aave_v3_ethereum
+    chain: ethereum
+    protocol: aave_v3_ethereum
+    status: phase0
+    notes: >
+      Benchmark only. Expected to show high liquidator concentration and near-zero opportunity
+      for a non-co-located operator. Measured so that the exclusion is evidence, not folklore.
+
+  - key: morpho_base
+    chain: base
+    protocol: morpho_base
+    status: phase0
+    notes: >
+      Primary win-rate venue. Isolated markets with no Chainlink SVR / OEV auction, so
+      liquidation value is won by speed and coverage rather than auctioned back to the protocol
+      (unlike Aave on Base). Held at phase0 until `liq registry verify --venue morpho_base` pins
+      the singleton codehash, the market allowlist is populated, and version is recorded — then
+      raise to shadow. See config/protocols/morpho_base.yaml.
+

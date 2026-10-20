@@ -1,0 +1,73 @@
+key: morpho_base
+protocol: morpho_blue
+version: unverified
+chain: base
+deploy_block: 13977148        # approximate Morpho Blue Base deployment; a scan lower bound only
+
+# Morpho Blue is a single immutable, non-proxy contract — it IS the root of trust, pinned by
+# codehash (decision D9) via the generic `addresses_provider` ContractRef slot (the field name is
+# Aave-flavoured; the mechanism is not). There is no PoolAddressesProvider to derive pool/oracle
+# from, because every market carries its own oracle.
+#
+# PROMOTION PATH: run `liq registry verify --venue morpho_base` to read the live codehash, record
+# it under `addresses_provider.codehash`, set `version` to the on-chain revision, populate the
+# `markets:` allowlist (see `liq registry markets --venue morpho_base`), then raise the venue in
+# config/venues.yaml from `phase0` to `shadow`.
+addresses_provider:
+  address: "0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb"
+  label: MorphoBlue
+  is_proxy: false
+  # Read live from Base on 2026-10-14 via `liq registry verify --venue morpho_base`.
+  codehash: "0xaa76348c0b91e5dfcece228ef6847b0c5081656d2def05c5617bcab659f0b819"
+
+base_currency_symbol: USD
+# 1e8, USD-like. The loan asset (a stablecoin on the allowlisted markets) is treated as worth $1,
+# so decision figures and size buckets read in dollars. Non-stable loan markets need a USD
+# reference and are out of scope for this MVP.
+base_currency_unit: 100000000
+
+# Chainlink ETH/USD on Base (8 decimals) for valuing gas — Morpho market oracles do not price the
+# native token. VERIFY this address before relying on it.
+native_usd_feed: "0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70"
+
+# Morpho's singleton offers 0-fee flash loans on any asset it holds (decision D3); Balancer v2 is
+# the fallback. Capacity is the lender's live balance of the loan token, read before use.
+flash_sources:
+  - name: morpho_blue
+    address: "0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb"
+    premium_bps: 0
+    queryable_premium: false
+  - name: balancer_v2
+    address: "0xBA12222222228d8Ba445958a75a0704d566BF2C8"
+    premium_bps: 0
+    queryable_premium: false
+
+# The exit leg uses the same Uniswap v3 QuoterV2 on Base as the Aave venue. Single-hop only, as
+# documented there; long-tail collateral without a direct pair against the loan asset is
+# unquotable and, by D18, unexecutable — the correct failure, not a silent one.
+exit_venues:
+  - name: uniswap_v3
+    kind: uniswap_v3_quoter_v2
+    quoter: "0x3d4e44Eb1374240CE5F1B871ab261CD16335B76a"
+    fee_tiers: [100, 500, 3000, 10000]
+
+# Market allowlist — Morpho is permissionless, so there is no safe "all markets" set to scan.
+# Populate from `liq registry markets --venue morpho_base` (ranked by current borrow) or the
+# Morpho API. Choose large, stablecoin-loan markets with VOLATILE collateral — that is where
+# liquidations actually happen (stablecoin-collateral and exotic high-LLTV markets rarely do).
+# Each id is resolved to its on-chain MarketParams at startup and hashed back to the id (tripwire).
+#
+# The six Base USDC-loan markets with the most liquidation activity (Morpho API, 499 liquidations
+# over the 6 days to 2026-10-14 — these cover ~90% of them). Chosen by liquidation FREQUENCY, not
+# borrow size: the biggest market (cbBTC/USDC) is also the safest and rarely liquidates.
+markets:
+  - { id: "0xd4a903dc6d949519060c7707f9604fdc9772c046e05c2e3a8fce0bd7196e4109", label: "cbXRP/USDC" }
+  - { id: "0x09276541cfecb6920a80679a1deced4dde3ae64bf5fc2c9c1f9c21e0c152e1a5", label: "JitoSOL/USDC" }
+  - { id: "0x7dc02ff6c536b1d49d7fba770438d79f5bd1f1c78884629b7d1aaee19675782b", label: "SOL/USDC" }
+  - { id: "0x0ca10126f6c94cbd9cf0a48cc9516ae5e3dec5aa68303e6d988ee37c5149bf0d", label: "cbETH/USDC" }
+  - { id: "0x8793cf302b8ffd655ab97bd1c695dbd967807e8367a65cb2f4edaf1380ba1bda", label: "WETH/USDC" }
+  - { id: "0x9125d0fa03c3137166df68bcc72283477830de2a4a5536512374c573ad4583c3", label: "cbLTC/USDC" }
+
+# Morpho Blue is canonical, not an Aave fork, so no fork verification checklist is required. It is
+# still codehash-pinned and read-only until promoted — canonical does not mean trusted blindly.
+canonical_deployment: true

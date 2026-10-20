@@ -1,0 +1,17 @@
+LIVE rotating MM: size=$8.0/side  max_inv=$16.0  stop=3.5x spread(floor 1.5%)  aggr=0.33  run=2700s  start USD=80.24
+  RE-ATTACH OOB/USD: holding 1576.95 OOB, reconstructed avg_cost=0.010144998 — will profit-sell/stop before rotating
+  c1 OOB/USD: bid=0.00986 ask=0.01008 inv=1576.95OOB ($15.72) cost=0.010144998
+  c2 OOB/USD: bid=0.00993 ask=0.01012 inv=1576.95OOB ($15.81) cost=0.010144998
+  c3 OOB/USD: bid=0.00999 ask=0.01019 inv=1576.95OOB ($15.91) cost=0.010144998
+  c4 OOB/USD: bid=0.00982 ask=0.01013 inv=1576.95OOB ($15.73) cost=0.010144998
+  c5 OOB/USD: bid=0.00994 ask=0.01015 inv=1576.95OOB ($15.84) cost=0.010144998
+  c6 OOB/USD: bid=0.00995 ask=0.01016 inv=1576.95OOB ($15.86) cost=0.010144998
+  BUY filled 798.459 OOB @ ~0.0100193 -> avg_cost 0.010108135
+  c7 OOB/USD: bid=0.00983 ask=0.00998 inv=2375.4OOB ($23.53) cost=0.010108135
+  c8 OOB/USD: bid=0.00983 ask=0.00999 inv=2375.4OOB ($23.54) cost=0.010108135
+  c9 OOB/USD: bid=0.00989 ask=0.01002 inv=2375.4OOB ($23.65) cost=0.010108135
+  c10 OOB/USD: bid=0.00989 ask=0.01002 inv=2375.4OOB ($23.65) cost=0.010108135
+  c11 OOB/USD: bid=0.00989 ask=0.01002 inv=2375.4OOB ($23.65) cost=0.010108135
+  c12 OOB/USD: bid=0.00991 ask=0.01002 inv=2375.4OOB ($23.67) cost=0.010108135
+
+stopping (signal) — cleaning up…

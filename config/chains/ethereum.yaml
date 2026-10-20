@@ -1,0 +1,58 @@
+key: ethereum
+chain_id: 1
+name: Ethereum
+block_time_ms: 12000
+
+# Kept configured and supported, deliberately dormant (decision D1). Mainnet Aave liquidations
+# are contested by searchers with co-located infrastructure and builder relationships; it is
+# the venue where a solo operator has least edge. It stays here so that (a) the Phase 0 study
+# can measure it rather than assume it, and (b) adding it later is a status change, not a port.
+inclusion_strategy: bundle_auction
+pending_source: public_mempool
+
+gas:
+  reverts_cost_gas: true
+  native_symbol: ETH
+  native_decimals: 18
+  abnormal_gas_multiple: 4.0
+
+finality:
+  safe_tag_supported: true
+  finalized_tag_supported: true
+  confirmed_depth: 2
+  typical_reorg_depth: 1
+  l1_settlement_seconds: null   # this is L1
+
+quorum:
+  min_agreeing: 2
+  max_block_lag: 1
+  stale_after_ms: 45000
+  disagreement_halts: true
+
+endpoints:
+  - name: primary
+    http_url: ${ETHEREUM_RPC_PRIMARY:-https://ethereum-rpc.publicnode.com}
+    ws_url: ${ETHEREUM_WS_PRIMARY:-wss://ethereum-rpc.publicnode.com}
+    role: authoritative
+    node: full
+    supports_subscribe: true
+    rate_limit_rps: 10
+    max_log_range: 10000
+
+  - name: secondary
+    http_url: ${ETHEREUM_RPC_SECONDARY:-https://eth.drpc.org}
+    role: quorum
+    node: full
+    rate_limit_rps: 5
+    max_log_range: 10000
+
+  - name: bulk
+    http_url: ${ETHEREUM_RPC_BULK:-https://rpc.mevblocker.io}
+    role: backup
+    node: full
+    rate_limit_rps: 3
+    max_log_range: 10000
+
+explorer_url: https://etherscan.io
+notes: >
+  Dormant by decision, not by omission. Measured in Phase 0 as the competition benchmark.

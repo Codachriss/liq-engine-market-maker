@@ -1,0 +1,65 @@
+key: aave_v3_base
+protocol: aave_v3
+version: unverified
+chain: base
+deploy_block: 2357134        # approximate lower bound for log scans
+
+addresses_provider:
+  address: "0xe20fCBdBfFC4Dd138cE8b2E6FBb6CB49777ad64D"
+  label: PoolAddressesProvider
+  is_proxy: false
+  codehash: "0xefb34c67e8737046b820be55b2ee18d57d78eca48058175a3dde822d69b4fa69"
+
+# Verified against chain on 2026-08-16 by `liq registry verify`.
+expected_pool: "0xA238Dd80C259a72e81d7e4664a9801593F98d1c5"
+expected_oracle: "0x2Cc0Fc26eD4563A5ce5e8bdcfe1A2878676Ae156"
+expected_data_provider: "0x0f43731eb8d45a581f4a36dd74f5f358bc90c73a"
+
+base_currency_symbol: USD
+base_currency_unit: 100000000
+
+close_factor:
+  source_version: "3.1"
+  default_close_factor_bps: 5000
+  max_close_factor_bps: 10000
+  close_factor_hf_threshold_wad: 950000000000000000
+  min_base_full_close: 200000000000
+  min_leftover_base: 100000000000
+
+flash_sources:
+  - name: balancer_v2
+    address: "0xBA12222222228d8Ba445958a75a0704d566BF2C8"
+    premium_bps: 0
+    queryable_premium: false
+  - name: aave_v3_self
+    address: "0xA238Dd80C259a72e81d7e4664a9801593F98d1c5"
+    premium_bps: 5
+    queryable_premium: true
+
+# Verified against Base: code present at the quoter, and WETH->USDC fills on the 5bps tier
+# (the first address recorded here was mistyped in its last four characters and had no code,
+# which `UniswapV3Quoter.verify` now catches rather than reporting every pair as unroutable).
+# The quoter, not the router — quoting is a read; swapping is the execution path's problem.
+# Single-hop only for now: multi-hop needs a packed `bytes` path, which core.abi.encode_call
+# deliberately refuses to encode. Long-tail collateral without a direct debt pair is therefore
+# unquotable here and, by D18, unexecutable — which is the correct failure, not a silent one.
+exit_venues:
+  - name: uniswap_v3
+    kind: uniswap_v3_quoter_v2
+    quoter: "0x3d4e44Eb1374240CE5F1B871ab261CD16335B76a"
+    fee_tiers: [100, 500, 3000, 10000]
+
+asset_annotations:
+  - { address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913", symbol: USDC,   is_stable: true, oracle_kind: chainlink_push }
+  - { address: "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA", symbol: USDbC,  is_stable: true, oracle_kind: chainlink_push }
+  - { address: "0x4200000000000000000000000000000000000006", symbol: WETH,   oracle_kind: chainlink_push }
+  - { address: "0xc1CBa3fCea344f92D9239c08C0568f6F2F0ee452", symbol: wstETH, oracle_kind: capped_adapter, thin_exit_liquidity: false }
+  - { address: "0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22", symbol: cbETH,  oracle_kind: capped_adapter, thin_exit_liquidity: true }
+
+refresh:
+  param_ttl_seconds: 300
+  reconcile_interval_seconds: 60
+  max_hf_drift_bps: 10
+  max_presign_staleness_blocks: 0
+
+canonical_deployment: true

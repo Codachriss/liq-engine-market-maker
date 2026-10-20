@@ -1,0 +1,88 @@
+watching 12 emitter addresses:
+  0x9f0c1dd78c4cbdf5b9cf923a549a201edc676d34  XRP / USD
+  0xfa9ebd1fc381c5babb495bb53664ae9b6665e4e4  XRP / USD (OCR aggregator)
+  0x206a34e47093125fbf4c75b7c7e88b84c6a77a69  LTC / USD
+  0xd175aa4ed3aeccd03266c2bbbb16b0b419d005aa  LTC / USD (OCR aggregator)
+  0xd7818272b9e248357d13057aab0b417af31e817d  CBETH / USD
+  0x71e021bc2e8a709b72ac7b6036e5b2bf30f263d0  CBETH / USD (OCR aggregator)
+  0x975043adbb80fc32276cbf9bbcfd4a601a12462d  SOL / USD
+  0x57b823541ab83ecdcd0b25a23d8fd572764d4ad9  SOL / USD (OCR aggregator)
+  0x71041dddad3595f9ced3dccfbe3d1f4b0a16bb70  ETH / USD
+  0x05c84a58fe042275b37db038baacd15f410c7bb0  ETH / USD (OCR aggregator)
+  0x7e860098f58bbfc8648a4311b374b1d669a2bc6b  USDC / USD
+  0x68be4c50235205ede361ac8244b1ee221cdda5e2  USDC / USD (OCR aggregator)
+
+connecting WSS to base-mainnet.g.alchemy.com … (run 600s)
+
+subscribed newHeads: 0x4ed7bc5dbf25ba4ed8cb4467a1fff3de
+subscribed alchemy_pendingTransactions: 0xd36b32b88113d58494b151eea7b0e002
+  .. 15s: heads=7 pending_seen=0
+  .. 30s: heads=15 pending_seen=0
+  .. 45s: heads=22 pending_seen=0
+  .. 60s: heads=30 pending_seen=0
+  .. 75s: heads=37 pending_seen=0
+  .. 90s: hwatching 12 emitter addresses:
+  0x9f0c1dd78c4cbdf5b9cf923a549a201edc676d34  XRP / USD
+  0xfa9ebd1fc381c5babb495bb53664ae9b6665e4e4  XRP / USD (OCR aggregator)
+  0x206a34e47093125fbf4c75b7c7e88b84c6a77a69  LTC / USD
+  0xd175aa4ed3aeccd03266c2bbbb16b0b419d005aa  LTC / USD (OCR aggregator)
+  0xd7818272b9e248357d13057aab0b417af31e817d  CBETH / USD
+  0x71e021bc2e8a709b72ac7b6036e5b2bf30f263d0  CBETH / USD (OCR aggregator)
+  0x975043adbb80fc32276cbf9bbcfd4a601a12462d  SOL / USD
+  0x57b823541ab83ecdcd0b25a23d8fd572764d4ad9  SOL / USD (OCR aggregator)
+  0x71041dddad3595f9ced3dccfbe3d1f4b0a16bb70  ETH / USD
+  0x05c84a58fe042275b37db038baacd15f410c7bb0  ETH / USD (OCR aggregator)
+  0x7e860098f58bbfc8648a4311b374b1d669a2bc6b  USDC / USD
+  0x68be4c50235205ede361ac8244b1ee221cdda5e2  USDC / USD (OCR aggregator)
+
+connecting WSS to base-mainnet.g.alchemy.com … (run 600s)
+
+subscribed newHeads: 0x3de7e42ec07372ed64c0bc22376b77b3
+subscribed alchemy_pendingTransactions: 0x94d520dd1a99446bcc78e6c18e7ede65
+  .. 15s: heads=7 pending_seen=0
+  .. 30s: heads=15 pending_seen=0
+  .. 45s: heads=22 pending_seen=0
+  .. 60s: heads=30 pending_  .. 570s: heads=285 pending_seen=0
+  .. 585s: heads=292 pending_seen=0
+  .. 600s: heads=300 pending_seen=0
+
+========================================================================
+LATENCY HARNESS SUMMARY
+========================================================================
+ran 603s
+pending txs observed (watched addrs): 0
+  of which resolved to a block: 0
+  transmit() txs with a lead-time sample: 0
+no lead-time samples collected (no watched tx seen, or no pending stream).
+135 pending_seen=0
+  .. 285s: heads=142 pending_seen=0
+  .. 300s: heads=150 pending_seen=0
+  .. 315s: heads=157 pending_seen=0
+  .. 330s: heads=165 pending_seen=0
+  .. 345s: heads=172 pending_seen=0
+  .. 360s: heads=180 pending_seen=0
+  .. 375s: heads=187 pending_seen=0
+  .. 390s: heads=195 pending_seen=0
+  .. 405s: heads=202 pending_seen=0
+  .. 420s: heads=210 pending_seen=0
+  .. 435s: heads=217 pending_seen=0
+  .. 450s: heads=225 pending_seen=0
+  .. 465s: heads=232 pending_seen=0
+  .. 480s: heads=240 pending_seen=0
+  .. 495s: heads=247 pending_seen=0
+  .. 510s: heads=255 pending_seen=0
+  .. 525s: heads=262 pending_seen=0
+  .. 540s: heads=270 pending_seen=0
+  .. 555s: heads=277 pending_seen=0
+  .. 570s: heads=285 pending_seen=0
+  .. 585s: heads=292 pending_seen=0
+  .. 600s: heads=300 pending_seen=0
+
+========================================================================
+LATENCY HARNESS SUMMARY
+========================================================================
+ran 603s
+pending txs observed (watched addrs): 0
+  of which resolved to a block: 0
+  transmit() txs with a lead-time sample: 0
+no lead-time samples collected (no watched tx seen, or no pending stream).

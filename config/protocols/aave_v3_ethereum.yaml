@@ -1,0 +1,53 @@
+key: aave_v3_ethereum
+protocol: aave_v3
+version: unverified
+chain: ethereum
+deploy_block: 16291127       # approximate lower bound for log scans
+
+addresses_provider:
+  address: "0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e"
+  label: PoolAddressesProvider
+  is_proxy: false
+  codehash: "0x0f8c7f9c735ac0f3f35b1e78882a617380549def43faeca0d959d5aadd81dee4"
+
+# Verified against chain on 2026-08-16 by `liq registry verify`.
+expected_pool: "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2"
+expected_oracle: "0x54586bE62E3c3580375aE3723C145253060Ca0C2"
+expected_data_provider: "0x0a16f2fcc0d44fae41cc54e079281d84a363becd"
+
+base_currency_symbol: USD
+base_currency_unit: 100000000
+
+close_factor:
+  source_version: "3.1"
+  default_close_factor_bps: 5000
+  max_close_factor_bps: 10000
+  close_factor_hf_threshold_wad: 950000000000000000
+  min_base_full_close: 200000000000
+  min_leftover_base: 100000000000
+
+flash_sources:
+  - name: balancer_v2
+    address: "0xBA12222222228d8Ba445958a75a0704d566BF2C8"
+    premium_bps: 0
+    queryable_premium: false
+  - name: aave_v3_self
+    address: "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2"
+    premium_bps: 5
+    queryable_premium: true
+
+asset_annotations:
+  - { address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", symbol: USDC,   is_stable: true, oracle_kind: chainlink_push }
+  - { address: "0xdAC17F958D2ee523a2206206994597C13D831ec7", symbol: USDT,   is_stable: true, oracle_kind: chainlink_push }
+  - { address: "0x6B175474E89094C44Da98b954EedeAC495271d0F", symbol: DAI,    is_stable: true, oracle_kind: chainlink_push }
+  - { address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", symbol: WETH,   oracle_kind: chainlink_push }
+  - { address: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599", symbol: WBTC,   oracle_kind: chainlink_push }
+  - { address: "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0", symbol: wstETH, oracle_kind: capped_adapter }
+
+refresh:
+  param_ttl_seconds: 300
+  reconcile_interval_seconds: 30
+  max_hf_drift_bps: 10
+  max_presign_staleness_blocks: 0
+
+canonical_deployment: true

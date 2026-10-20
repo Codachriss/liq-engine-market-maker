@@ -1,0 +1,34 @@
+streaming Flashblocks (run 600s)…
+  .. 30s blocks=15 usdc=121 transmits=0
+  .. 60s blocks=30 usdc=214 transmits=0
+  .. 90s blocks=45 usdc=312 transmits=0
+  .. 120s blocks=60 usdc=422 transmits=0
+  .. 150s blocks=75 usdc=490 transmits=0
+  .. 180s blocks=90 usdc=567 transmits=0
+  .. 211s blocks=105 usdc=656 transmits=0
+  .. 241s blocks=120 usdc=743 transmits=0
+  ·· Morpho tx in block 52740292 flashblock #1
+  .. 271s blocks=135 usdc=822 transmits=0
+  ·· Morpho tx in block 52740294 flashblock #7
+  .. 301s blocks=150 usdc=890 transmits=0
+  .. 331s blocks=165 usdc=991 transmits=0
+  .. 362s blocks=181 usdc=1083 transmits=0
+  .. 392s blocks=196 usdc=1177 transmits=0
+  .. 422s blocks=210 usdc=1309 transmits=0
+  .. 452s blocks=226 usdc=1420 transmits=0
+  .. 483s blocks=241 usdc=1513 transmits=0
+  .. 513s blocks=256 usdc=1632 transmits=0
+  .. 543s blocks=271 usdc=1759 transmits=0
+  .. 574s blocks=287 usdc=1850 transmits=0
+
+========================================================================
+FLASHBLOCKS PROBE SUMMARY
+========================================================================
+blocks observed: 300
+flashblocks per block: min=8 median=11 max=11
+inter-flashblock gap (ms): median=161 (n=2998)
+RLP decode liveness — USDC txs seen: 1923 (OK, decoder works)
+watched transmits seen: 0
+Morpho singleton txs seen: 2
+
+no watched transmit landed during the run (feeds quiet) — but the flashblocks/block + gap numbers above bound the structural window.

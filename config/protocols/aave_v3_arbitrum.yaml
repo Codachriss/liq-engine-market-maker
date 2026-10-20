@@ -1,0 +1,66 @@
+key: aave_v3_arbitrum
+protocol: aave_v3
+version: unverified          # written by `liq registry verify` from the on-chain revision
+chain: arbitrum
+deploy_block: 7742429        # approximate lower bound for log scans; a clamp, not a constant
+
+# The single root of trust for this deployment. Pool, oracle and data-provider addresses are
+# NOT listed here — they are read from this contract at runtime, so a governance change is
+# picked up automatically instead of silently diverging from a stale constant.
+addresses_provider:
+  address: "0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb"
+  label: PoolAddressesProvider
+  is_proxy: false
+  codehash: "0x1a95f317ee56e0b9aedc4f4b7abd9e546dc45c26d1d77e95bcf62b789d9a5486"
+
+# Tripwires. Verified against chain on 2026-08-16 by `liq registry verify`; if a derived
+# address stops matching one of these, governance moved something and the protocol halts.
+expected_pool: "0x794a61358D6845594F94dc1DB02A252b5b4814aD"
+expected_oracle: "0xb56c2F0B653B2e0b10C9b928C8580Ac5Df02C7C7"
+expected_data_provider: "0x243aa95cac2a25651eda86e80bee66114413c43b"
+
+base_currency_symbol: USD
+base_currency_unit: 100000000   # 1e8 — Aave's USD-denominated oracle base
+
+# Non-queryable Solidity constants, tagged with the version they were read from. The tag must
+# equal the verified on-chain version before this venue may run live; a version bump therefore
+# forces a re-read instead of silently applying old rules to a new pool.
+close_factor:
+  source_version: "3.1"
+  default_close_factor_bps: 5000      # 50% normally...
+  max_close_factor_bps: 10000         # ...but 100% below the HF threshold
+  close_factor_hf_threshold_wad: 950000000000000000    # HF <= 0.95 -> full close
+  min_base_full_close: 200000000000   # total debt < $2,000 -> full close
+  min_leftover_base: 100000000000     # may not leave < $1,000 of debt or collateral behind
+
+# Cheapest first (decision D3). Premiums are advisory here and re-read on chain before use.
+flash_sources:
+  - name: balancer_v2
+    address: "0xBA12222222228d8Ba445958a75a0704d566BF2C8"
+    premium_bps: 0
+    queryable_premium: false
+    notes: Zero-fee flash loans; capacity limited by vault balance for the borrowed asset.
+  - name: aave_v3_self
+    address: "0x794a61358D6845594F94dc1DB02A252b5b4814aD"
+    premium_bps: 5
+    queryable_premium: true
+    notes: FLASHLOAN_PREMIUM_TOTAL on the Pool; always queried, never assumed.
+
+# Judgements only. Reserve lists, decimals, thresholds, bonuses, caps and frozen state are all
+# queried from the protocol — nothing that the chain can answer appears here.
+asset_annotations:
+  - { address: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831", symbol: USDC,  is_stable: true,  oracle_kind: chainlink_push }
+  - { address: "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8", symbol: USDC.e, is_stable: true, oracle_kind: chainlink_push }
+  - { address: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9", symbol: USDT,  is_stable: true,  oracle_kind: chainlink_push }
+  - { address: "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1", symbol: DAI,   is_stable: true,  oracle_kind: chainlink_push }
+  - { address: "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1", symbol: WETH,  oracle_kind: chainlink_push }
+  - { address: "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f", symbol: WBTC,  oracle_kind: chainlink_push }
+  - { address: "0x912CE59144191C1204E64559FE8253a0e49E6548", symbol: ARB,   oracle_kind: chainlink_push }
+
+refresh:
+  param_ttl_seconds: 300
+  reconcile_interval_seconds: 60
+  max_hf_drift_bps: 10
+  max_presign_staleness_blocks: 0
+
+canonical_deployment: true

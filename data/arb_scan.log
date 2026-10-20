@@ -1,0 +1,407 @@
+
+===== pass 1/10 @ 14:27:57 =====
+gas estimate per arb: $0.056
+
+token     size$  gross_bps     net_$  direction
+DAI         100       -4.7     -0.10  buy Uni / sell Aero
+AERO        100      -15.8     -0.21  buy Uni / sell Aero
+cbBTC       100      -16.8     -0.22  buy Uni / sell Aero
+WETH        100      -17.6     -0.23  buy Uni / sell Aero
+DAI         500      -12.9     -0.70  buy Uni / sell Aero
+VIRTUAL     100      -70.7     -0.76  buy Aero / sell Uni
+WETH        500      -19.7     -1.04  buy Uni / sell Aero
+AERO        500      -25.6     -1.33  buy Uni / sell Aero
+WETH       1000      -21.9     -2.24  buy Uni / sell Aero
+cbBTC       500      -47.3     -2.42  buy Uni / sell Aero
+AERO       1000      -37.8     -3.83  buy Uni / sell Aero
+VIRTUAL     500     -133.2     -6.72  buy Aero / sell Uni
+cbBTC      1000      -85.1     -8.56  buy Uni / sell Aero
+DAI        1000     -130.2    -13.07  buy Uni / sell Aero
+WETH       5000      -37.1    -18.59  buy Uni / sell Aero
+cbETH       100    -2069.2    -20.75  buy Uni / sell Aero
+VIRTUAL    1000     -210.2    -21.07  buy Aero / sell Uni
+DEGEN       100    -4087.8    -40.93  buy Aero / sell Uni
+BRETT       100    -6647.1    -66.53  buy Uni / sell Aero
+AERO       5000     -134.1    -67.12  buy Uni / sell Aero
+cbBTC      5000     -377.3   -188.70  buy Uni / sell Aero
+cbETH       500    -5633.9   -281.75  buy Uni / sell Aero
+VIRTUAL    5000     -785.5   -392.81  buy Aero / sell Uni
+DEGEN       500    -7906.7   -395.39  buy Aero / sell Uni
+BRETT       500    -8982.7   -449.19  buy Uni / sell Aero
+cbETH      1000    -7181.8   -718.24  buy Uni / sell Aero
+DEGEN      1000    -8848.9   -884.94  buy Aero / sell Uni
+BRETT      1000    -9459.3   -945.99  buy Uni / sell Aero
+DAI        5000    -4813.2  -2406.64  buy Uni / sell Aero
+cbETH      5000    -9279.7  -4639.90  buy Uni / sell Aero
+DEGEN      5000    -9729.9  -4864.99  buy Uni / sell Aero
+BRETT      5000    -9884.5  -4942.31  buy Uni / sell Aero
+
+net-positive opportunities this pass: 0 / 32
+
+===== pass 2/10 @ 14:29:16 =====
+gas estimate per arb: $0.056
+
+token     size$  gross_bps     net_$  direction
+DAI         100       -4.7     -0.10  buy Uni / sell Aero
+WETH        100       -5.0     -0.11  buy Uni / sell Aero
+cbBTC       100      -16.1     -0.22  buy Uni / sell Aero
+AERO        100      -31.1     -0.37  buy Aero / sell Uni
+WETH        500       -7.7     -0.44  buy Uni / sell Aero
+DAI         500      -12.9     -0.70  buy Uni / sell Aero
+VIRTUAL     100      -70.1     -0.76  buy Uni / sell Aero
+WETH       1000      -12.1     -1.27  buy Uni / sell Aero
+AERO        500      -40.8     -2.10  buy Aero / sell Uni
+cbBTC       500      -46.6     -2.38  buy Uni / sell Aero
+AERO       1000      -52.9     -5.35  buy Aero / sell Uni
+VIRTUAL     500     -132.5     -6.68  buy Uni / sell Aero
+cbBTC      1000      -84.4     -8.49  buy Uni / sell Aero
+DAI        1000     -130.2    -13.07  buy Uni / sell Aero
+WETH       5000      -28.4    -14.27  buy Uni / sell Aero
+cbETH       100    -2069.2    -20.75  buy Uni / sell Aero
+VIRTUAL    1000     -209.4    -21.00  buy Uni / sell Aero
+DEGEN       100    -4087.8    -40.93  buy Aero / sell Uni
+BRETT       100    -6647.1    -66.53  buy Uni / sell Aero
+AERO       5000     -150.9    -75.51  buy Aero / sell Uni
+cbBTC      5000     -376.8   -188.44  buy Uni / sell Aero
+cbETH       500    -5633.9   -281.75  buy Uni / sell Aero
+VIRTUAL    5000     -784.1   -392.09  buy Uni / sell Aero
+DEGEN       500    -7906.7   -395.39  buy Aero / sell Uni
+BRETT       500    -8982.7   -449.19  buy Uni / sell Aero
+cbETH      1000    -7180.9   -718.15  buy Uni / sell Aero
+DEGEN      1000    -8848.9   -884.94  buy Aero / sell Uni
+BRETT      1000    -9459.3   -945.99  buy Uni / sell Aero
+DAI        5000    -4813.2  -2406.64  buy Uni / sell Aero
+cbETH      5000    -9279.7  -4639.90  buy Uni / sell Aero
+DEGEN      5000    -9729.9  -4864.99  buy Uni / sell Aero
+BRETT      5000    -9884.5  -4942.31  buy Uni / sell Aero
+
+net-positive opportunities this pass: 0 / 32
+
+===== pass 3/10 @ 14:30:37 =====
+gas estimate per arb: $0.056
+
+token     size$  gross_bps     net_$  direction
+DAI         100       -4.7     -0.10  buy Uni / sell Aero
+WETH        100       -9.5     -0.15  buy Uni / sell Aero
+AERO        100      -16.7     -0.22  buy Uni / sell Aero
+cbBTC       100      -19.6     -0.25  buy Uni / sell Aero
+WETH        500      -12.0     -0.66  buy Uni / sell Aero
+DAI         500      -12.9     -0.70  buy Uni / sell Aero
+VIRTUAL     100      -71.0     -0.77  buy Uni / sell Aero
+AERO        500      -26.5     -1.38  buy Uni / sell Aero
+WETH       1000      -14.6     -1.52  buy Uni / sell Aero
+cbBTC       500      -50.1     -2.56  buy Uni / sell Aero
+AERO       1000      -38.7     -3.93  buy Uni / sell Aero
+VIRTUAL     500     -133.5     -6.73  buy Uni / sell Aero
+cbBTC      1000      -87.9     -8.84  buy Uni / sell Aero
+DAI        1000     -130.2    -13.07  buy Uni / sell Aero
+WETH       5000      -30.1    -15.08  buy Uni / sell Aero
+cbETH       100    -2058.3    -20.64  buy Uni / sell Aero
+VIRTUAL    1000     -210.4    -21.10  buy Uni / sell Aero
+DEGEN       100    -4087.8    -40.93  buy Aero / sell Uni
+BRETT       100    -6647.1    -66.53  buy Uni / sell Aero
+AERO       5000     -135.4    -67.75  buy Uni / sell Aero
+cbBTC      5000     -380.2   -190.18  buy Uni / sell Aero
+cbETH       500    -5631.2   -281.62  buy Uni / sell Aero
+VIRTUAL    5000     -785.6   -392.88  buy Uni / sell Aero
+DEGEN       500    -7906.7   -395.39  buy Aero / sell Uni
+BRETT       500    -8982.7   -449.19  buy Uni / sell Aero
+cbETH      1000    -7180.9   -718.15  buy Uni / sell Aero
+DEGEN      1000    -8848.9   -884.94  buy Aero / sell Uni
+BRETT      1000    -9459.3   -945.99  buy Uni / sell Aero
+DAI        5000    -4813.2  -2406.64  buy Uni / sell Aero
+cbETH      5000    -9279.7  -4639.90  buy Uni / sell Aero
+DEGEN      5000    -9729.9  -4864.99  buy Uni / sell Aero
+BRETT      5000    -9884.5  -4942.31  buy Uni / sell Aero
+
+net-positive opportunities this pass: 0 / 32
+
+===== pass 4/10 @ 14:31:58 =====
+gas estimate per arb: $0.056
+
+token     size$  gross_bps     net_$  direction
+DAI         100       -4.7     -0.10  buy Uni / sell Aero
+AERO        100      -16.4     -0.22  buy Uni / sell Aero
+WETH        100      -17.1     -0.23  buy Uni / sell Aero
+cbBTC       100      -21.1     -0.27  buy Uni / sell Aero
+DAI         500      -12.9     -0.70  buy Uni / sell Aero
+VIRTUAL     100      -71.0     -0.77  buy Uni / sell Aero
+WETH        500      -17.8     -0.95  buy Uni / sell Aero
+AERO        500      -27.4     -1.43  buy Uni / sell Aero
+WETH       1000      -21.5     -2.21  buy Uni / sell Aero
+cbBTC       500      -51.6     -2.64  buy Uni / sell Aero
+AERO       1000      -35.9     -3.65  buy Uni / sell Aero
+VIRTUAL     500     -133.5     -6.73  buy Uni / sell Aero
+cbBTC      1000      -89.4     -8.99  buy Uni / sell Aero
+DAI        1000     -130.2    -13.07  buy Uni / sell Aero
+WETH       5000      -36.9    -18.49  buy Uni / sell Aero
+cbETH       100    -2058.3    -20.64  buy Uni / sell Aero
+VIRTUAL    1000     -210.4    -21.10  buy Uni / sell Aero
+DEGEN       100    -4087.8    -40.93  buy Aero / sell Uni
+AERO       5000     -132.7    -66.39  buy Uni / sell Aero
+BRETT       100    -6647.1    -66.53  buy Uni / sell Aero
+cbBTC      5000     -381.7   -190.89  buy Uni / sell Aero
+cbETH       500    -5631.2   -281.62  buy Uni / sell Aero
+VIRTUAL    5000     -785.6   -392.88  buy Uni / sell Aero
+DEGEN       500    -7906.7   -395.39  buy Aero / sell Uni
+BRETT       500    -8982.7   -449.19  buy Uni / sell Aero
+cbETH      1000    -7180.9   -718.15  buy Uni / sell Aero
+DEGEN      1000    -8848.9   -884.94  buy Aero / sell Uni
+BRETT      1000    -9459.3   -945.99  buy Uni / sell Aero
+DAI        5000    -4813.2  -2406.64  buy Uni / sell Aero
+cbETH      5000    -9279.7  -4639.90  buy Uni / sell Aero
+DEGEN      5000    -9729.9  -4864.99  buy Uni / sell Aero
+BRETT      5000    -9884.5  -4942.31  buy Uni / sell Aero
+
+net-positive opportunities this pass: 0 / 32
+
+===== pass 5/10 @ 14:33:19 =====
+gas estimate per arb: $0.056
+
+token     size$  gross_bps     net_$  direction
+DAI         100       -4.7     -0.10  buy Uni / sell Aero
+WETH        100       -6.3     -0.12  buy Uni / sell Aero
+AERO        100      -16.8     -0.22  buy Uni / sell Aero
+cbBTC       100      -23.6     -0.29  buy Uni / sell Aero
+WETH        500       -5.3     -0.32  buy Uni / sell Aero
+DAI         500      -12.9     -0.70  buy Uni / sell Aero
+VIRTUAL     100      -77.1     -0.83  buy Uni / sell Aero
+WETH       1000       -9.9     -1.04  buy Uni / sell Aero
+AERO        500      -26.8     -1.40  buy Uni / sell Aero
+cbBTC       500      -54.0     -2.75  buy Uni / sell Aero
+AERO       1000      -39.4     -3.99  buy Uni / sell Aero
+VIRTUAL     500     -144.2     -7.27  buy Uni / sell Aero
+cbBTC      1000      -91.7     -9.23  buy Uni / sell Aero
+DAI        1000     -130.2    -13.07  buy Uni / sell Aero
+WETH       5000      -28.3    -14.21  buy Uni / sell Aero
+cbETH       100    -2098.4    -21.04  buy Uni / sell Aero
+VIRTUAL    1000     -211.3    -21.19  buy Uni / sell Aero
+DEGEN       100    -4131.5    -41.37  buy Aero / sell Uni
+BRETT       100    -6647.1    -66.53  buy Uni / sell Aero
+AERO       5000     -136.9    -68.49  buy Uni / sell Aero
+cbBTC      5000     -383.9   -192.00  buy Uni / sell Aero
+cbETH       500    -5651.3   -282.62  buy Uni / sell Aero
+VIRTUAL    5000     -789.8   -394.94  buy Uni / sell Aero
+DEGEN       500    -7920.2   -396.06  buy Aero / sell Uni
+BRETT       500    -8982.7   -449.19  buy Uni / sell Aero
+cbETH      1000    -7193.2   -719.37  buy Uni / sell Aero
+DEGEN      1000    -8855.9   -885.64  buy Aero / sell Uni
+BRETT      1000    -9459.3   -945.99  buy Uni / sell Aero
+DAI        5000    -4813.2  -2406.64  buy Uni / sell Aero
+cbETH      5000    -9282.6  -4641.34  buy Uni / sell Aero
+DEGEN      5000    -9729.9  -4864.99  buy Uni / sell Aero
+BRETT      5000    -9884.5  -4942.31  buy Uni / sell Aero
+
+net-positive opportunities this pass: 0 / 32
+
+===== pass 6/10 @ 14:34:40 =====
+gas estimate per arb: $0.056
+
+token     size$  gross_bps     net_$  direction
+DAI         100       -4.7     -0.10  buy Uni / sell Aero
+WETH        100       -5.7     -0.11  buy Uni / sell Aero
+AERO        100      -15.3     -0.21  buy Uni / sell Aero
+cbBTC       100      -18.7     -0.24  buy Uni / sell Aero
+DAI         500      -12.9     -0.70  buy Uni / sell Aero
+VIRTUAL     100      -68.0     -0.74  buy Uni / sell Aero
+WETH        500      -13.8     -0.75  buy Uni / sell Aero
+AERO        500      -23.7     -1.24  buy Uni / sell Aero
+WETH       1000      -14.3     -1.48  buy Uni / sell Aero
+cbBTC       500      -49.2     -2.52  buy Uni / sell Aero
+AERO       1000      -42.7     -4.33  buy Uni / sell Aero
+VIRTUAL     500     -130.9     -6.60  buy Uni / sell Aero
+cbBTC      1000      -87.0     -8.76  buy Uni / sell Aero
+DAI        1000     -130.2    -13.07  buy Uni / sell Aero
+WETH       5000      -31.3    -15.73  buy Uni / sell Aero
+VIRTUAL    1000     -208.4    -20.90  buy Uni / sell Aero
+cbETH       100    -2085.7    -20.91  buy Uni / sell Aero
+DEGEN       100    -4115.0    -41.21  buy Aero / sell Uni
+BRETT       100    -6647.1    -66.53  buy Uni / sell Aero
+AERO       5000     -135.0    -67.56  buy Uni / sell Aero
+cbBTC      5000     -379.6   -189.84  buy Uni / sell Aero
+cbETH       500    -5648.2   -282.46  buy Uni / sell Aero
+VIRTUAL    5000     -787.1   -393.62  buy Uni / sell Aero
+DEGEN       500    -7918.0   -395.95  buy Aero / sell Uni
+BRETT       500    -8982.7   -449.19  buy Uni / sell Aero
+cbETH      1000    -7192.1   -719.26  buy Uni / sell Aero
+DEGEN      1000    -8855.1   -885.57  buy Aero / sell Uni
+BRETT      1000    -9459.3   -945.99  buy Uni / sell Aero
+DAI        5000    -4813.2  -2406.64  buy Uni / sell Aero
+cbETH      5000    -9282.6  -4641.34  buy Uni / sell Aero
+DEGEN      5000    -9731.1  -4865.58  buy Uni / sell Aero
+BRETT      5000    -9884.5  -4942.31  buy Uni / sell Aero
+
+net-positive opportunities this pass: 0 / 32
+
+===== pass 7/10 @ 14:36:00 =====
+gas estimate per arb: $0.056
+
+token     size$  gross_bps     net_$  direction
+DAI         100       -4.7     -0.10  buy Uni / sell Aero
+WETH        100      -13.9     -0.20  buy Uni / sell Aero
+AERO        100      -14.3     -0.20  buy Uni / sell Aero
+cbBTC       100      -19.1     -0.25  buy Uni / sell Aero
+DAI         500      -12.9     -0.70  buy Uni / sell Aero
+VIRTUAL     100      -74.0     -0.80  buy Uni / sell Aero
+WETH        500      -17.1     -0.91  buy Uni / sell Aero
+AERO        500      -24.7     -1.29  buy Uni / sell Aero
+WETH       1000      -22.0     -2.26  buy Uni / sell Aero
+cbBTC       500      -49.5     -2.53  buy Uni / sell Aero
+AERO       1000      -39.8     -4.03  buy Uni / sell Aero
+VIRTUAL     500     -136.9     -6.90  buy Uni / sell Aero
+cbBTC      1000      -87.3     -8.79  buy Uni / sell Aero
+DAI        1000     -130.2    -13.07  buy Uni / sell Aero
+WETH       5000      -40.6    -20.37  buy Uni / sell Aero
+cbETH       100    -2085.7    -20.91  buy Uni / sell Aero
+VIRTUAL    1000     -214.3    -21.49  buy Uni / sell Aero
+DEGEN       100    -4115.0    -41.21  buy Aero / sell Uni
+BRETT       100    -6647.1    -66.53  buy Uni / sell Aero
+AERO       5000     -147.8    -73.96  buy Uni / sell Aero
+cbBTC      5000     -379.9   -190.01  buy Uni / sell Aero
+cbETH       500    -5648.2   -282.46  buy Uni / sell Aero
+DEGEN       500    -7918.0   -395.95  buy Aero / sell Uni
+VIRTUAL    5000     -792.5   -396.30  buy Uni / sell Aero
+BRETT       500    -8982.7   -449.19  buy Uni / sell Aero
+cbETH      1000    -7192.1   -719.26  buy Uni / sell Aero
+DEGEN      1000    -8855.1   -885.57  buy Aero / sell Uni
+BRETT      1000    -9459.3   -945.99  buy Uni / sell Aero
+DAI        5000    -4813.2  -2406.64  buy Uni / sell Aero
+cbETH      5000    -9282.6  -4641.34  buy Uni / sell Aero
+DEGEN      5000    -9731.1  -4865.58  buy Uni / sell Aero
+BRETT      5000    -9884.5  -4942.31  buy Uni / sell Aero
+
+net-positive opportunities this pass: 0 / 32
+
+===== pass 8/10 @ 14:37:21 =====
+gas estimate per arb: $0.056
+
+token     size$  gross_bps     net_$  direction
+DAI         100       -4.7     -0.10  buy Uni / sell Aero
+cbBTC       100      -21.5     -0.27  buy Uni / sell Aero
+AERO        100      -29.4     -0.35  buy Uni / sell Aero
+WETH        100      -31.1     -0.37  buy Uni / sell Aero
+DAI         500      -12.9     -0.70  buy Uni / sell Aero
+VIRTUAL     100      -74.0     -0.80  buy Uni / sell Aero
+WETH        500      -33.9     -1.75  buy Uni / sell Aero
+AERO        500      -39.7     -2.04  buy Uni / sell Aero
+cbBTC       500      -52.1     -2.66  buy Uni / sell Aero
+WETH       1000      -35.8     -3.63  buy Uni / sell Aero
+AERO       1000      -48.6     -4.91  buy Uni / sell Aero
+VIRTUAL     500     -136.9     -6.90  buy Uni / sell Aero
+cbBTC      1000      -89.9     -9.05  buy Uni / sell Aero
+DAI        1000     -130.2    -13.07  buy Uni / sell Aero
+cbETH       100    -2085.7    -20.91  buy Uni / sell Aero
+VIRTUAL    1000     -214.3    -21.49  buy Uni / sell Aero
+WETH       5000      -51.1    -25.63  buy Uni / sell Aero
+DEGEN       100    -4115.0    -41.21  buy Aero / sell Uni
+BRETT       100    -6647.1    -66.53  buy Uni / sell Aero
+AERO       5000     -147.7    -73.89  buy Uni / sell Aero
+cbBTC      5000     -383.0   -191.54  buy Uni / sell Aero
+cbETH       500    -5648.2   -282.46  buy Uni / sell Aero
+DEGEN       500    -7918.0   -395.95  buy Aero / sell Uni
+VIRTUAL    5000     -792.5   -396.30  buy Uni / sell Aero
+BRETT       500    -8982.7   -449.19  buy Uni / sell Aero
+cbETH      1000    -7192.1   -719.26  buy Uni / sell Aero
+DEGEN      1000    -8855.1   -885.57  buy Aero / sell Uni
+BRETT      1000    -9459.3   -945.99  buy Uni / sell Aero
+DAI        5000    -4813.2  -2406.64  buy Uni / sell Aero
+cbETH      5000    -9282.6  -4641.34  buy Uni / sell Aero
+DEGEN      5000    -9731.1  -4865.58  buy Uni / sell Aero
+BRETT      5000    -9884.5  -4942.31  buy Uni / sell Aero
+
+net-positive opportunities this pass: 0 / 32
+
+===== pass 9/10 @ 14:38:42 =====
+gas estimate per arb: $0.056
+
+token     size$  gross_bps     net_$  direction
+DAI         100       -4.7     -0.10  buy Uni / sell Aero
+WETH        100       -9.9     -0.15  buy Aero / sell Uni
+AERO        100      -25.7     -0.31  buy Uni / sell Aero
+cbBTC       100      -31.5     -0.37  buy Uni / sell Aero
+DAI         500      -12.9     -0.70  buy Uni / sell Aero
+WETH        500      -12.9     -0.70  buy Aero / sell Uni
+VIRTUAL     100      -75.4     -0.81  buy Uni / sell Aero
+WETH       1000      -14.1     -1.47  buy Aero / sell Uni
+AERO        500      -36.0     -1.85  buy Uni / sell Aero
+cbBTC       500      -62.0     -3.15  buy Uni / sell Aero
+AERO       1000      -48.8     -4.93  buy Uni / sell Aero
+VIRTUAL     500     -138.2     -6.97  buy Uni / sell Aero
+cbBTC      1000      -99.7    -10.02  buy Uni / sell Aero
+DAI        1000     -130.2    -13.07  buy Uni / sell Aero
+WETH       5000      -33.0    -16.58  buy Aero / sell Uni
+cbETH       100    -2085.7    -20.91  buy Uni / sell Aero
+VIRTUAL    1000     -215.6    -21.61  buy Uni / sell Aero
+DEGEN       100    -4115.0    -41.21  buy Aero / sell Uni
+BRETT       100    -6647.1    -66.53  buy Uni / sell Aero
+AERO       5000     -147.9    -73.99  buy Uni / sell Aero
+cbBTC      5000     -391.5   -195.83  buy Uni / sell Aero
+cbETH       500    -5648.2   -282.46  buy Uni / sell Aero
+DEGEN       500    -7918.0   -395.95  buy Aero / sell Uni
+VIRTUAL    5000     -792.7   -396.38  buy Uni / sell Aero
+BRETT       500    -8982.7   -449.19  buy Uni / sell Aero
+cbETH      1000    -7192.1   -719.26  buy Uni / sell Aero
+DEGEN      1000    -8855.1   -885.57  buy Aero / sell Uni
+BRETT      1000    -9459.3   -945.99  buy Uni / sell Aero
+DAI        5000    -4813.2  -2406.64  buy Uni / sell Aero
+cbETH      5000    -9282.6  -4641.34  buy Uni / sell Aero
+DEGEN      5000    -9731.1  -4865.58  buy Uni / sell Aero
+BRETT      5000    -9884.5  -4942.31  buy Uni / sell Aero
+
+net-positive opportunities this pass: 0 / 32
+
+===== pass 10/10 @ 14:40:03 =====
+gas estimate per arb: $0.056
+
+token     size$  gross_bps     net_$  direction
+DAI         100       -4.7     -0.10  buy Uni / sell Aero
+AERO        100      -13.7     -0.19  buy Uni / sell Aero
+WETH        100      -15.9     -0.21  buy Aero / sell Uni
+cbBTC       100      -31.4     -0.37  buy Uni / sell Aero
+DAI         500      -12.9     -0.70  buy Uni / sell Aero
+VIRTUAL     100      -75.4     -0.81  buy Uni / sell Aero
+WETH        500      -19.1     -1.01  buy Aero / sell Uni
+AERO        500      -24.2     -1.27  buy Uni / sell Aero
+WETH       1000      -21.0     -2.15  buy Aero / sell Uni
+cbBTC       500      -61.8     -3.14  buy Uni / sell Aero
+AERO       1000      -39.0     -3.96  buy Uni / sell Aero
+VIRTUAL     500     -138.2     -6.97  buy Uni / sell Aero
+cbBTC      1000      -99.5    -10.00  buy Uni / sell Aero
+DAI        1000     -130.2    -13.07  buy Uni / sell Aero
+WETH       5000      -36.4    -18.23  buy Aero / sell Uni
+cbETH       100    -2085.7    -20.91  buy Uni / sell Aero
+VIRTUAL    1000     -215.6    -21.61  buy Uni / sell Aero
+DEGEN       100    -4115.0    -41.21  buy Aero / sell Uni
+BRETT       100    -6647.1    -66.53  buy Uni / sell Aero
+AERO       5000     -139.0    -69.56  buy Uni / sell Aero
+cbBTC      5000     -391.4   -195.73  buy Uni / sell Aero
+cbETH       500    -5648.2   -282.46  buy Uni / sell Aero
+DEGEN       500    -7918.0   -395.95  buy Aero / sell Uni
+VIRTUAL    5000     -792.7   -396.38  buy Uni / sell Aero
+BRETT       500    -8982.7   -449.19  buy Uni / sell Aero
+cbETH      1000    -7192.1   -719.26  buy Uni / sell Aero
+DEGEN      1000    -8855.1   -885.57  buy Aero / sell Uni
+BRETT      1000    -9459.3   -945.99  buy Uni / sell Aero
+DAI        5000    -4813.2  -2406.64  buy Uni / sell Aero
+cbETH      5000    -9282.6  -4641.34  buy Uni / sell Aero
+DEGEN      5000    -9731.1  -4865.58  buy Uni / sell Aero
+BRETT      5000    -9884.5  -4942.31  buy Uni / sell Aero
+
+net-positive opportunities this pass: 0 / 32
+
+===== best net seen per token/size across all passes =====
+  DAI@100          best_net=$-0.10
+  WETH@100         best_net=$-0.11
+  AERO@100         best_net=$-0.19
+  cbBTC@100        best_net=$-0.22
+  WETH@500         best_net=$-0.32
+  DAI@500          best_net=$-0.70
+  VIRTUAL@100      best_net=$-0.74
+  WETH@1000        best_net=$-1.04
+  AERO@500         best_net=$-1.24
+  cbBTC@500        best_net=$-2.38
+  AERO@1000        best_net=$-3.65
+  VIRTUAL@500      best_net=$-6.60
+  cbBTC@1000       best_net=$-8.49
+  DAI@1000         best_net=$-13.07
+  WETH@5000        best_net=$-14.21

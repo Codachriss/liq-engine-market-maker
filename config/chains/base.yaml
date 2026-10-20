@@ -1,0 +1,66 @@
+key: base
+chain_id: 8453
+name: Base
+block_time_ms: 2000
+
+# OP Stack: a public mempool exists and the sequencer orders by priority fee, so unlike
+# Arbitrum there is a genuine auction here and bid sizing is a real decision.
+inclusion_strategy: priority_auction
+pending_source: public_mempool
+
+# UNVERIFIED: confirm with `liq registry verify base` before promoting past phase0.
+sequencer_uptime_feed:
+  aggregator: "0xBCF85224fc0756B9Fa45aA7892530B47e10b6433"
+  grace_period_seconds: 3600
+
+gas:
+  reverts_cost_gas: true
+  native_symbol: ETH
+  native_decimals: 18
+  abnormal_gas_multiple: 6.0
+
+finality:
+  safe_tag_supported: true
+  finalized_tag_supported: true
+  confirmed_depth: 1
+  typical_reorg_depth: 0
+  l1_settlement_seconds: 1800
+
+quorum:
+  min_agreeing: 2
+  max_block_lag: 2
+  stale_after_ms: 20000
+  disagreement_halts: true
+
+endpoints:
+  - name: primary
+    http_url: ${BASE_RPC_PRIMARY:-https://mainnet.base.org}
+    ws_url: ${BASE_WS_PRIMARY:-wss://mainnet.base.org}
+    role: authoritative
+    node: full
+    supports_subscribe: true
+    # Free-tier figures, measured 2026-10-03, and these are per *call* (a batch of 75 is 75).
+    # Alchemy free: ~330 compute units/s, eth_call = 26 CU, so ~12 calls/s before 429s; 8
+    # leaves headroom for the heavier getLogs. Infura and the public endpoint throttle harder.
+    # Raise these when the plan changes; nothing else needs to.
+    rate_limit_rps: 8
+    max_log_range: 50000
+
+  - name: secondary
+    http_url: ${BASE_RPC_SECONDARY:-https://base-rpc.publicnode.com}
+    role: quorum
+    node: full
+    rate_limit_rps: 4
+    max_log_range: 50000
+
+  - name: bulk
+    http_url: ${BASE_RPC_BULK:-https://base.drpc.org}
+    role: backup
+    node: archive
+    rate_limit_rps: 3
+    max_log_range: 50000
+
+explorer_url: https://basescan.org
+notes: >
+  Second Phase 0 candidate. Priority-fee ordering makes bid optimisation meaningful, and the
+  lending market is younger than Arbitrum's, which is where lower competition tends to live.

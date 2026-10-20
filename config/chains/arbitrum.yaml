@@ -1,0 +1,77 @@
+key: arbitrum
+chain_id: 42161
+name: Arbitrum One
+block_time_ms: 250
+
+# Arbitrum orders by arrival at the sequencer. There is no public mempool and no bid to place:
+# winning is a latency race, not an auction. A losing attempt still lands on chain and still
+# burns gas, so the executor needs cheap early-revert guards rather than a bidding strategy.
+inclusion_strategy: latency_race
+pending_source: sequencer_feed
+sequencer_feed_url: ${ARBITRUM_SEQUENCER_FEED:-wss://arb1.arbitrum.io/feed}
+
+# Aave v3 refuses liquidations for a grace period after the sequencer comes back up. Without
+# this listener the simulator invents profitable liquidations that revert on chain — and it
+# does so precisely during the volatile windows we most want to trade.
+# UNVERIFIED: confirm with `liq registry verify arbitrum` before promoting past phase0.
+sequencer_uptime_feed:
+  aggregator: "0xFdB631F5EE196F0ed6FAa767959853A9F217697D"
+  grace_period_seconds: 3600
+
+gas:
+  reverts_cost_gas: true
+  native_symbol: ETH
+  native_decimals: 18
+  abnormal_gas_multiple: 5.0
+
+finality:
+  safe_tag_supported: true
+  finalized_tag_supported: true
+  confirmed_depth: 1
+  typical_reorg_depth: 0        # the sequencer does not reorg itself; L1 reversion is the risk
+  l1_settlement_seconds: 1800   # tier SETTLED: batch posted and finalised on Ethereum
+
+quorum:
+  min_agreeing: 2
+  max_block_lag: 8              # 250ms blocks: 8 blocks is ~2s of drift
+  stale_after_ms: 15000
+  disagreement_halts: true
+
+endpoints:
+  - name: primary
+    http_url: ${ARBITRUM_RPC_PRIMARY:-https://arb1.arbitrum.io/rpc}
+    ws_url: ${ARBITRUM_WS_PRIMARY:-wss://arb1.arbitrum.io/ws}
+    role: authoritative
+    node: full
+    supports_subscribe: true
+    rate_limit_rps: 20
+    # Arbitrum produces a block every ~250ms, so 10,000 blocks is only 42 minutes of chain and
+    # a multi-month scan would need tens of thousands of requests. This is an upper bound to
+    # probe from: the pool halves it on rejection and remembers what the provider accepted.
+    max_log_range: 100000
+
+  - name: secondary
+    http_url: ${ARBITRUM_RPC_SECONDARY:-https://arbitrum-one-rpc.publicnode.com}
+    role: quorum
+    node: full
+    rate_limit_rps: 10
+    # Arbitrum produces a block every ~250ms, so 10,000 blocks is only 42 minutes of chain and
+    # a multi-month scan would need tens of thousands of requests. This is an upper bound to
+    # probe from: the pool halves it on rejection and remembers what the provider accepted.
+    max_log_range: 100000
+
+  - name: bulk
+    http_url: ${ARBITRUM_RPC_BULK:-https://arbitrum.drpc.org}
+    role: backup
+    node: archive
+    rate_limit_rps: 5
+    # Arbitrum produces a block every ~250ms, so 10,000 blocks is only 42 minutes of chain and
+    # a multi-month scan would need tens of thousands of requests. This is an upper bound to
+    # probe from: the pool halves it on rejection and remembers what the provider accepted.
+    max_log_range: 100000
+
+explorer_url: https://arbiscan.io
+notes: >
+  Primary Phase 0 candidate. Cheap gas and frequent liquidations, but FCFS ordering means the
+  edge is latency and reverted attempts are a real cost line. Public endpoints are the default
+  so the tree runs unconfigured; they are not adequate for anything past phase0.
